@@ -47,27 +47,25 @@ nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
 }
+/* Make labels and inputs stack vertically */
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+button {
+  grid-column: 1 / -1;
+}
+
 input,
 textarea,
 button {
   font: inherit;
-}
-/* Make labels and inputs stack vertically */
-label,
-input,
-textarea,
-button {
-  display: block;
-}
-
-/* Make inputs take full width */
-input,
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Add spacing around labels */
-label {
-  margin-block: 0.5em;
 }
