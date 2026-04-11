@@ -100,3 +100,63 @@ h6 {
 .projects h2 {
   margin: 0;
 }
+
+/* Resume page */
+
+h1 {
+  margin-bottom: 0.2rem;
+}
+
+h1 + p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: oklch(45% 3% 200);
+}
+
+section {
+  background: white;
+  border: 1px solid oklch(90% 2% 200);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-block: 1.25rem;
+}
+
+section > header h2 {
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid oklch(90% 2% 200);
+  color: var(--color-accent);
+}
+
+article {
+  padding-block: 0.75rem;
+}
+
+article + article {
+  border-top: 1px solid oklch(92% 2% 200);
+}
+
+article h3 {
+  margin: 0;
+}
+
+article p {
+  margin: 0.3rem 0;
+}
+
+ul {
+  margin-top: 0.5rem;
+}
+
+li {
+  margin-block: 0.35rem;
+}
+
+time {
+  color: oklch(50% 3% 200);
+  font-weight: 500;
+}
+
+section ul li::marker {
+  color: var(--color-accent);
+}
