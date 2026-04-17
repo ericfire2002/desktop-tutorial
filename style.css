@@ -12,6 +12,8 @@ body {
   padding: 1rem;
 
   accent-color: var(--color-accent);
+  background-color: canvas;
+  color: canvastext;
 }
 
 /* Enable Flexbox */
@@ -112,13 +114,14 @@ h1 + p {
 }
 
 section {
-  background: canvas;
+  background-color: color-mix(in oklch, canvas 92%, canvastext 8%);
   color: canvastext;
-  border: 1px solid oklch(90% 2% 200 / 40%);
+  border: 1px solid oklch(50% 10% 200 / 40%);
   border-radius: 12px;
   padding: 1.25rem;
   margin-block: 1.25rem;
-}
+} 
+
 section > header h2 {
   margin: 0 0 0.75rem 0;
   padding-bottom: 0.35rem;
