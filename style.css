@@ -1,5 +1,7 @@
 /* Body layout */
-
+html {
+  color-scheme: light dark;
+}
 :root {
   --color-accent: oklch(65% 50% 0);
 }
@@ -14,13 +16,11 @@ body {
 
 /* Enable Flexbox */
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
+
   display: flex;
-
-  /* spacing below nav */
   margin-bottom: 1rem;
-
-  /* bottom border */
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* Style links */
@@ -38,14 +38,13 @@ nav a {
 
 /* Current page styling */
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
-
-  /* adjust for thicker border */
+  border-bottom: 0.4em solid var(--border-color);
   padding-bottom: 0.1em;
 }
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 /* Make labels and inputs stack vertically */
 form {
@@ -66,7 +65,8 @@ button {
 
 input,
 textarea,
-button {
+button,
+select {
   font: inherit;
 }
 
@@ -157,4 +157,14 @@ time {
 
 section ul li::marker {
   color: var(--color-accent);
+}
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
+
+.color-scheme select {
+  margin-left: 0.5rem;
 }

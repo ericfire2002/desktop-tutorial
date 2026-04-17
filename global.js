@@ -26,6 +26,36 @@ let pages = [
   { url: 'https://github.com/ericfire2002', title: 'GitHub' },
 ];
 
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  `
+    <label class="color-scheme">
+      Theme:
+      <select>
+        <option value="light dark">Automatic</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
+  `
+);
+
+let select = document.querySelector('.color-scheme select');
+
+function setColorScheme(colorScheme) {
+  document.documentElement.style.setProperty('color-scheme', colorScheme);
+  select.value = colorScheme;
+  localStorage.colorScheme = colorScheme;
+}
+
+select.addEventListener('input', function (event) {
+  setColorScheme(event.target.value);
+});
+
+if ('colorScheme' in localStorage) {
+  setColorScheme(localStorage.colorScheme);
+}
+
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
